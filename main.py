@@ -11,9 +11,9 @@ while True:
 
             todos.append(todo)
 
-            file = open('todos.txt', 'w')
-            file.writelines(todos)
-            file.close()
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+
         case 'show':
             file = open('todos.txt', 'r')
             todos = file.readlines()
