@@ -22,12 +22,11 @@ while True:
             row = f"{index + 1}-{item}"
             print(row)
     elif 'edit' in user_action:
-        number = int(input("Number of the todo to edit: "))
+        number = int(user_action[5:])
         number = number - 1
 
         with open('todos.txt', 'r') as file:
             todos = file.readlines()
-        print('todos', todos)
 
         new_todo = input("Enter new todo: ")
         todos[number] = new_todo + '\n'
